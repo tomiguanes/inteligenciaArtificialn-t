@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guanes Tomas</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>La inteligencia en las Computadoras</h1>
+        <h2>¿Es cómo la humana?¿cuáles son sus límites?¿De qué manera modifica nuestra vida?</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showSection('section1')" aria-label="Ir a Chatbots y Test de Turing">Chatbots y Test de Turing</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('section2')" aria-label="Ir a NeuroComputing">NeuroComputing</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('section3')" aria-label="Ir a Algoritmos y Redes Sociales">Algoritmos y Redes Sociales</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('section4')" aria-label="Ir a Robótica">Robótica Industrial</a></li>
+        </ul>
+    </nav>
+    
+
+    <main>
+        <section id="section1" class="content-section" style="display: none;">
+            <h2>Seguramente conozcas las bondades de ChatGPT (potenciado por IA) a la hora de responder cualquier pregunta que le hagas, pero... ¿podemos decir que es inteligente? Conozcamos el test de Turing</h2>
+            <h2>
+            <iframe width="1000" height="450" src="https://www.youtube.com/embed/rF8d7XAuAaY?si=WxaR6Ql41UFOKkpB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2><label for="question1">¿Qué opinas de esta prueba para verificar la inteligencia de una IA?</label><br>
+                <textarea id="question1" rows="4" cols="50" placeholder="Escribe tu respuesta aquí..."></textarea><br><br>
+                
+                <!-- Pregunta 2 -->
+                <label for="question2">¿Cómo crees que la IA impactará en el futuro?</label><br>
+                <textarea id="question2" rows="4" cols="50" placeholder="Escribe tu respuesta aquí..."></textarea><br><br>
+                
+                <!-- Botón para enviar respuestas -->
+                <button type="button" onclick="submitAnswers()">Enviar respuestas</button>
+                
+                <!-- Donde se mostrarán las respuestas enviadas -->
+                <div id="submittedAnswers"></div>
+        
+        </section>
+
+        <section id="section2" class="content-section" style="display: none;">
+            <h2>Las computadoras son inteligentes, pero a su manera</h2>
+            <p>Para comprobar esto, te invito a hacer una prueba, ¿te animás?</p>
+            <section id="captchaSection">
+        
+        <p>A continuación selecciona la imagen del gatito:</p>
+        <div id="captchaImages"></div>
+        <p id="resultMessage"></p>
+        <h2>Diferencias entre el cerebro humano y un procesador</h2>
+        <img src="images/Cerebro.jpg" alt="CuadroComparativoCerebrovsPC" style="width: 700px; height: auto;">
+        <h2>Actualmente está en desarrollo la llamada "Computación Neuromórfica", te invito a que veas este video introductorio</h2>
+        <iframe width="1000" height="450" src="https://www.youtube.com/embed/Z1GdHNwQtt4?si=tY1w4J0-FebY9HHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+
+    <script src="script.js"></script>
+        </section>
+
+
+        
+            <section id="section3" class="content-section" style="display: none;">
+                <h2>Los algoritmos y las redes sociales.</h2>
+                <form id="socialMediaSurvey">
+                    <label for="q1">¿Utilizas redes sociales?</label><br>
+                    <input type="radio" name="q1" value="si" onclick="handleSocialMediaUsage(true)">Sí<br>
+                    <input type="radio" name="q1" value="no" onclick="handleSocialMediaUsage(false)">No<br><br>
+            
+                    <div id="socialMediaList" style="display: none;">
+                        <label for="q2">¿Usas alguna de estas redes sociales?</label><br>
+                        <input type="checkbox" name="q2" value="Instagram">Instagram<br>
+                        <input type="checkbox" name="q2" value="Facebook">Facebook<br>
+                        <input type="checkbox" name="q2" value="Twitter">Twitter<br>
+                        <input type="checkbox" name="q2" value="TikTok">TikTok<br><br>
+                        <button type="button" onclick="showAIMessage()">Continuar</button><br><br>
+                    </div>
+            
+                    <p id="noSocialMediaMessage" style="display: none;">¡Felicitaciones! Perteneces al pequeñísimo porcentaje de la población que no usa redes sociales.</p>
+            
+                    <div id="aiMessage" style="display: none;"></div>
+            
+                    <div id="aiQuestion" style="display: none;">
+                        <label for="q3">¿Te gustaría saber más sobre los algoritmos y su uso en las redes sociales?</label><br>
+                        <input type="radio" name="q3" value="si" onclick="showVideo()">Sí<br>
+                        <input type="radio" name="q3" value="no" onclick="showThankYouMessage()">No<br><br>
+                    </div>
+            
+                    <div id="youtubeVideo" style="display: none;">
+                        <iframe width="1000" height="450" src="https://www.youtube.com/embed/uuCunODhySY?si=WJbkYiz1n_mzUiTO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <p id="thankYouMessage" style="display: none;">¡Gracias por participar de la encuesta!</p>
+                </form>
+            </section>
+
+            <section id="section4" class="content-section" style="display: none;">
+            <h2>También existen campos en los que las habilidades humanas y la inteligencia artificial se combinan para formar un gran equipo: </h2>
+            <iframe width="1000" height="450" src="https://www.youtube.com/embed/f8GnnCHo-Sc?si=bWhJ25kyv9xSceSb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="1000" height="450" src="https://www.youtube.com/embed/d_Pp_pUdkqU?si=JlZZk9Tfgp5KYhbn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        
+        </section>
+    </main>
+
+    <footer>
+        <p>PROYECTO AMAD - Tomás Guanes - 2024</p>
+    </footer>
+</body>
+</html>
