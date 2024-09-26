@@ -18,6 +18,19 @@ function showSection(sectionId) {
     selectedSection.style.display = 'block';
 }
 
+function submitAnswers() {
+    // Recoger las respuestas de las preguntas
+    const answer1 = document.getElementById('question1').value;
+    const answer2 = document.getElementById('question2').value;
+
+    // Verificar que las cajas de texto no estén vacías
+    if (!answer1 || !answer2) {
+        alert("Por favor, responde ambas preguntas.");
+        return;
+    }
+    document.getElementById('question1').value = '';
+    document.getElementById('question2').value = '';
+}
 
 function handleSocialMediaUsage(usesSocialMedia) {
     if (usesSocialMedia) {
