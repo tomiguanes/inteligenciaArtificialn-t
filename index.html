@@ -6,26 +6,47 @@
     <title>Guanes Tomas</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <header>
         <h1>La inteligencia en las Computadoras</h1>
-        <h2>¿Es cómo la humana?¿cuáles son sus límites?¿De qué manera modifica nuestra vida?</h2>
+        
+
+        <h2>¿Es como la humana?¿Cuáles son sus límites?¿De qué manera modifica nuestra vida?</h2>
     </header>
 
     <nav>
         <ul>
-            <li><a href="javascript:void(0)" onclick="showSection('section1')" aria-label="Ir a Chatbots y Test de Turing">Chatbots y Test de Turing</a></li>
-            <li><a href="javascript:void(0)" onclick="showSection('section2')" aria-label="Ir a NeuroComputing">NeuroComputing</a></li>
-            <li><a href="javascript:void(0)" onclick="showSection('section3')" aria-label="Ir a Algoritmos y Redes Sociales">Algoritmos y Redes Sociales</a></li>
-            <li><a href="javascript:void(0)" onclick="showSection('section4')" aria-label="Ir a Robótica">Robótica Industrial</a></li>
+            <li>
+                <a href="javascript:void(0)" onclick="showSection('section1')" aria-label="Ir a Chatbots y Test de Turing">
+                    <i class="fas fa-robot"></i> Chatbots y Test de Turing
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="showSection('section2')" aria-label="Ir a NeuroComputing">
+                    <i class="fas fa-brain"></i> NeuroComputing
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="showSection('section3')" aria-label="Ir a Algoritmos y Redes Sociales">
+                    <i class="fas fa-share-alt"></i> Algoritmos y Redes Sociales
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="showSection('section4')" aria-label="Ir a Robótica">
+                    <i class="fas fa-cogs"></i> Robótica Industrial
+                </a>
+            </li>
         </ul>
     </nav>
+    
     
 
     <main>
         <section id="section1" class="content-section" style="display: none;">
-            <h2>Seguramente conozcas las bondades de ChatGPT (potenciado por IA) a la hora de responder cualquier pregunta que le hagas, pero... ¿podemos decir que es inteligente? Conozcamos el test de Turing</h2>
+            <h2>Seguramente conozcas la utilidad de ChatGPT (potenciado por IA) a la hora de responder cualquier pregunta que le hagas, pero... ¿podemos decir que es inteligente? Conozcamos el test de Turing</h2>
             <h2>
             <iframe width="1000" height="450" src="https://www.youtube.com/embed/rF8d7XAuAaY?si=WxaR6Ql41UFOKkpB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <h2><label for="question1">¿Qué opinas de esta prueba para verificar la inteligencia de una IA?</label><br>
@@ -46,16 +67,29 @@
         <section id="section2" class="content-section" style="display: none;">
             <h2>Las computadoras son inteligentes, pero a su manera</h2>
             <p>Para comprobar esto, te invito a hacer una prueba, ¿te animás?</p>
+            
             <section id="captchaSection">
+                <p>A continuación selecciona la imagen del gatito:</p>
+                <div id="captchaImages"></div>
+                <p id="resultMessage"></p>
+            </section>
         
-        <p>A continuación selecciona la imagen del gatito:</p>
-        <div id="captchaImages"></div>
-        <p id="resultMessage"></p>
-        <h2>Diferencias entre el cerebro humano y un procesador</h2>
-        <img src="images/Cerebro.jpg" alt="CuadroComparativoCerebrovsPC" style="width: 700px; height: auto;">
-        <h2>Actualmente está en desarrollo la llamada "Computación Neuromórfica", te invito a que veas este video introductorio</h2>
-        <iframe width="1000" height="450" src="https://www.youtube.com/embed/Z1GdHNwQtt4?si=tY1w4J0-FebY9HHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
+            <!-- Encuesta oculta inicialmente -->
+            <div id="surveySection" style="display: none;">
+                <p>¿Sabes por qué?</p>
+                <button id="yesButton">Sí</button>
+                <button id="noButton">No</button>
+            </div>
+        
+            <!-- Contenido adicional oculto al principio -->
+            <div id="additionalContent" style="display: none;">
+                <h2>Diferencias entre el cerebro humano y un procesador</h2>
+                <img src="images/Cerebro.jpg" alt="CuadroComparativoCerebrovsPC" style="width: 700px; height: auto;">
+                <h2>Actualmente está en desarrollo la llamada "Computación Neuromórfica", te invito a que veas este video introductorio</h2>
+                <iframe width="1000" height="450" src="https://www.youtube.com/embed/Z1GdHNwQtt4?si=tY1w4J0-FebY9HHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+        
 
 
     <script src="script.js"></script>
@@ -64,14 +98,14 @@
 
         
             <section id="section3" class="content-section" style="display: none;">
-                <h2>Los algoritmos y las redes sociales.</h2>
+                <h2>Los algoritmos y las redes sociales</h2>
                 <form id="socialMediaSurvey">
-                    <label for="q1">¿Utilizas redes sociales?</label><br>
+                    <label for="q1">¿Utilizás redes sociales?</label><br>
                     <input type="radio" name="q1" value="si" onclick="handleSocialMediaUsage(true)">Sí<br>
                     <input type="radio" name="q1" value="no" onclick="handleSocialMediaUsage(false)">No<br><br>
             
                     <div id="socialMediaList" style="display: none;">
-                        <label for="q2">¿Usas alguna de estas redes sociales?</label><br>
+                        <label for="q2">¿Usás alguna de estas redes sociales?</label><br>
                         <input type="checkbox" name="q2" value="Instagram">Instagram<br>
                         <input type="checkbox" name="q2" value="Facebook">Facebook<br>
                         <input type="checkbox" name="q2" value="Twitter">Twitter<br>
@@ -84,7 +118,7 @@
                     <div id="aiMessage" style="display: none;"></div>
             
                     <div id="aiQuestion" style="display: none;">
-                        <label for="q3">¿Te gustaría saber más sobre los algoritmos y su uso en las redes sociales?</label><br>
+                        <label for="q3">¿Te gustaría aprender más sobre los algoritmos y su uso en las redes sociales?</label><br>
                         <input type="radio" name="q3" value="si" onclick="showVideo()">Sí<br>
                         <input type="radio" name="q3" value="no" onclick="showThankYouMessage()">No<br><br>
                     </div>
