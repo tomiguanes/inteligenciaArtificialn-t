@@ -113,7 +113,7 @@ function checkCaptcha(selectedImage) {
 
         // Mostrar el mensaje adicional
         const extraMessage = document.createElement('p');
-        extraMessage.textContent = '¡Felicitaciones! Para lo que vos resolviste en segundos, Google necesitó 16.000 procesadores para enseñarle a una computadora a identificar imágenes de gatos.';
+        extraMessage.textContent = '¡Felicitaciones! Lo resolviste en segundos. Por su parte, Google necesitó 16.000 procesadores para enseñarle a una computadora a identificar imágenes de gatos.';
         extraMessage.style.color = 'white';
         resultMessage.appendChild(extraMessage); // Agregar el mensaje debajo del resultado
 
