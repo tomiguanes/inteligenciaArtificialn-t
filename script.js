@@ -102,23 +102,40 @@ function createCaptchaImages(images) {
 
 
 // Función para verificar si se seleccionó la imagen correcta
+// Función para verificar si se seleccionó la imagen correcta
 function checkCaptcha(selectedImage) {
     const resultMessage = document.getElementById('resultMessage');
+    const surveySection = document.getElementById('surveySection');
+
     if (selectedImage === catImage) {
         resultMessage.textContent = '¡Correcto! Has seleccionado la imagen del gatito.';
         resultMessage.style.color = 'white';
 
         // Mostrar el mensaje adicional
         const extraMessage = document.createElement('p');
-        extraMessage.textContent = '¡Felicitaciones! Google necesitó 16.000 procesadores para enseñarle a una computadora a identificar imágenes de gatos.';
+        extraMessage.textContent = '¡Felicitaciones! Para lo que vos resolviste en segundos, Google necesitó 16.000 procesadores para enseñarle a una computadora a identificar imágenes de gatos.';
         extraMessage.style.color = 'white';
         resultMessage.appendChild(extraMessage); // Agregar el mensaje debajo del resultado
+
+        // Mostrar la encuesta
+        surveySection.style.display = 'block';
     } else {
         resultMessage.textContent = 'Error. Por favor, selecciona la imagen correcta.';
         resultMessage.style.color = 'white';
     }
 }
 
+// Función para manejar la respuesta de la encuesta
+function handleSurveyResponse() {
+    const additionalContent = document.getElementById('additionalContent');
+
+    // Mostrar el contenido adicional una vez respondida la encuesta
+    additionalContent.style.display = 'block';
+}
+
+// Asignar eventos a los botones de la encuesta
+document.getElementById('yesButton').onclick = handleSurveyResponse;
+document.getElementById('noButton').onclick = handleSurveyResponse;
 
 // Inicializar el captcha al cargar la página
 window.onload = initializeCaptcha;
